@@ -20,7 +20,7 @@ do
   F_TMP="$TMP_DIR"/"$NUM".tmp
 
   nl -w1 -s'}\hspace{1ex}' $F > $F_TMP
-  sed -i 's/^/\\noindent\\textsuperscript{/' $F_TMP
+  sed -i 's/^/\\filbreak\\noindent\\textsuperscript{/' $F_TMP
   sed -i 's/$/\\newline/' $F_TMP
 
   F_EN="$EN_DIR"/"$NUM".txt
