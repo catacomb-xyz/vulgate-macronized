@@ -48,8 +48,35 @@ do
   sed -i "1s/^/$STR\n\n/" $F
 done
 
+# replace macron with apex (accent)
+for F in $TMP_DIR/*.tex
+do
+  sed -i "s/Ā/Á/g" $F
+  sed -i "s/Ē/É/g" $F
+  sed -i "s/Ī/Í/g" $F
+  sed -i "s/Ō/Ó/g" $F
+  sed -i "s/Ū/Ú/g" $F
+  sed -i "s/Ȳ/Ý/g" $F
+  sed -i "s/ā/á/g" $F
+  sed -i "s/ē/é/g" $F
+  sed -i "s/ī/í/g" $F
+  sed -i "s/ō/ó/g" $F
+  sed -i "s/ū/ú/g" $F
+  sed -i "s/ȳ/ý/g" $F
+done
+
 echo """
-\documentclass[8pt]{report}
+\documentclass[10pt,openany]{report}
+
+\usepackage{fontspec}
+\setmainfont [
+  Path = ./../fonts/tex-gyre-schola/,
+  Extension = .ttf,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont= *-bold-italic,
+]{tex-gyre-schola}
 
 \title{Ēvangelium} % Sets article title
 \author{Sānctus Mārcus} % Sets authors name
@@ -79,6 +106,10 @@ echo """
   top=1.0in,
   bottom=1.0in
 ]{geometry}
+
+\hyphenpenalty 10000
+\exhyphenpenalty 10000
+\sloppypar
 
 \begin{document} % All begin commands must be paired with an end command somewhere
   \maketitle % creates title using information in preamble (title, author, date)
