@@ -127,16 +127,22 @@ echo """
 %  Extension = .otf,
 %]{OFLGoudyStM}
 
-\title{Ēvangelium} % Sets article title
-\author{Sānctus Marcus} % Sets authors name
-\date{\today} % Sets date for date compiled
-
 \usepackage{indentfirst}
 \usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
 
 \usepackage{titlesec}
+\usepackage{titlepic}
 \usepackage{color}
 \usepackage{needspace}
+
+\usepackage{graphicx}
+\pdfimageresolution=300
+\graphicspath{ {images/} }
+
+\title{\huge\bfseries\color{red} ĒVANGELIUM}
+\author{\bfseries\color{red} SECUNDUM MARCUM}
+\date{\scriptsize \today} % Sets date for date compiled
+\titlepic{\includegraphics[scale=0.25]{red-cross.png}}
 
 \titleformat{\chapter}
   {\normalfont\LARGE\bfseries\centering}{\thechapter}{1em}{}
@@ -154,8 +160,8 @@ echo """
   layoutvoffset=0.125in,
   right=0.75in,
   left=0.75in,
-  top=0.75in,
-  bottom=0.75in
+  top=1.25in,
+  bottom=1.25in
 ]{geometry}
 
 \usepackage{fancyhdr}
@@ -173,13 +179,23 @@ echo """
 \exhyphenpenalty 10000
 
 \begin{document} % All begin commands must be paired with an end command somewhere
-  \maketitle % creates title using information in preamble (title, author, date)
-  \newpage
-  \begin{flushleft}
+\maketitle % creates title using information in preamble (title, author, date)
+
+\newpage
+\clearpage
+\pagenumbering{arabic} 
+\begin{flushleft}
 """ >> $TMP_DIR/00.tex
 
 echo """
 \end{flushleft}
+
+\begin{center}
+\vfill
+\includegraphics[scale=0.25]{red-cross.png}
+\vfill
+\end{center}
+
 \end{document}
 """ >> $TMP_DIR/99.tex
 
