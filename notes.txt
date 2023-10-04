@@ -5,3 +5,6 @@ Elias -> Hēlīas
 Ioseph -> Iōsēph
 Sion -> Siōn
 Israel -> Isrāhēl
+
+Kathisma -> Sēdēs
+Stasis -> Status
