@@ -54,13 +54,14 @@ echo """
 \usepackage{fontspec}
 
 \setmainfont [
-  Path = ./../fonts/charis-sil/,
+  Path = ./../fonts/eczar/,
   Extension = .ttf,
-  UprightFont = *R,
-  BoldFont = *B,
-  ItalicFont = *I,
-  BoldItalicFont= *BI,
-]{CharisSIL}
+  UprightFont = *-Medium,
+  BoldFont = *-Bold,
+  ItalicFont = *-Regular,
+  BoldItalicFont= *-ExtraBold,
+]{Eczar}
+
 
 \usepackage{indentfirst}
 \usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
@@ -103,6 +104,7 @@ echo """
 \exhyphenpenalty 10000
 
 \begin{document}
+\addfontfeature{LetterSpace=1.5}
 
 \begin{flushleft}
 """ >> $TMP_DIR/000.tex

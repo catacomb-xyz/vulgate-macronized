@@ -26,7 +26,7 @@ do
   F_EN_TMP="$TMP_DIR"/"$NUM"EN.tmp
 
   cp $F_EN $F_EN_TMP
-  sed -i 's/^/\\noindent{\\scriptsize /' $F_EN_TMP
+  sed -i 's/^/\\noindent\\emph{\\scriptsize  /' $F_EN_TMP
   sed -i 's/$/}/' $F_EN_TMP
 
   awk '{print; if(getline < "'$F_EN_TMP'") print}' $F_TMP >> $TMP_DIR/$NUM.tex
@@ -104,14 +104,23 @@ echo """
 %  BoldItalicFont= *-BoldItalic,
 %]{Crimson}
 
+%\setmainfont [
+%  Path = ./../fonts/charis-sil/,
+%  Extension = .ttf,
+%  UprightFont = *R,
+%  BoldFont = *B,
+%  ItalicFont = *I,
+%  BoldItalicFont= *BI,
+%]{CharisSIL}
+
 \setmainfont [
-  Path = ./../fonts/charis-sil/,
+  Path = ./../fonts/eczar/,
   Extension = .ttf,
-  UprightFont = *R,
-  BoldFont = *B,
-  ItalicFont = *I,
-  BoldItalicFont= *BI,
-]{CharisSIL}
+  UprightFont = *-Medium,
+  BoldFont = *-Bold,
+  ItalicFont = *-Regular,
+  BoldItalicFont= *-ExtraBold,
+]{Eczar}
 
 %\setmainfont [
 %  Path = ./../fonts/alegreya/,
@@ -127,6 +136,8 @@ echo """
 %  Extension = .otf,
 %]{OFLGoudyStM}
 
+\defaultfontfeatures{LetterSpace=100}
+
 \usepackage{indentfirst}
 \usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
 
@@ -136,7 +147,7 @@ echo """
 \usepackage{needspace}
 
 \usepackage{graphicx}
-\pdfimageresolution=300
+%\pdfimageresolution=300
 \graphicspath{ {images/} }
 
 \title{\huge\bfseries\color{red} ĒVANGELIUM}
@@ -179,11 +190,12 @@ echo """
 \exhyphenpenalty 10000
 
 \begin{document} % All begin commands must be paired with an end command somewhere
+\addfontfeature{LetterSpace=1.5}
 \maketitle % creates title using information in preamble (title, author, date)
 
 \newpage
 \clearpage
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 \begin{flushleft}
 """ >> $TMP_DIR/00.tex
 
