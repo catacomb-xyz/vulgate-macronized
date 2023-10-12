@@ -62,7 +62,6 @@ echo """
   BoldItalicFont= *-ExtraBold,
 ]{Eczar}
 
-
 \usepackage{indentfirst}
 \usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
 

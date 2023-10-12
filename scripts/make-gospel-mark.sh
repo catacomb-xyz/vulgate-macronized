@@ -48,62 +48,10 @@ do
   echo "\Needspace{8\baselineskip}" >> $F
 done
 
-# replace macron with apex (accent)
-#for F in $TMP_DIR/*.tex
-#do
-  #sed -i "s/Ā/Á/g" $F
-  #sed -i "s/Ē/É/g" $F
-  #sed -i "s/Ī/Í/g" $F
-  #sed -i "s/Ō/Ó/g" $F
-  #sed -i "s/Ū/Ú/g" $F
-  #sed -i "s/Ȳ/Ý/g" $F
-  #sed -i "s/ā/á/g" $F
-  #sed -i "s/ē/é/g" $F
-  #sed -i "s/ī/í/g" $F
-  #sed -i "s/ō/ó/g" $F
-  #sed -i "s/ū/ú/g" $F
-  #sed -i "s/ȳ/ý/g" $F
-#done
-
-# replace macron with circumflex
-#for F in $TMP_DIR/*.tex
-#do
-  #sed -i "s/Ā/Â/g" $F
-  #sed -i "s/Ē/Ê/g" $F
-  #sed -i "s/Ī/Î/g" $F
-  #sed -i "s/Ō/Ô/g" $F
-  #sed -i "s/Ū/Û/g" $F
-  #sed -i "s/Ȳ/Ŷ/g" $F
-  #sed -i "s/ā/â/g" $F
-  #sed -i "s/ē/ê/g" $F
-  #sed -i "s/ī/î/g" $F
-  #sed -i "s/ō/ô/g" $F
-  #sed -i "s/ū/û/g" $F
-  #sed -i "s/ȳ/ŷ/g" $F
-#done
-
 echo """
 \documentclass[10pt,openany]{book}
 
 \usepackage{fontspec}
-%\setmainfont [
-%  Path = ./../fonts/tex-gyre-schola/,
-%  Extension = .ttf,
-%  UprightFont = *-regular,
-%  BoldFont = *-bold,
-%  ItalicFont = *-italic,
-%  BoldItalicFont= *-bold-italic,
-%]{tex-gyre-schola}
-
-%\setmainfont [
-%  Path = ./../fonts/crimson/,
-%  Extension = .ttf,
-%  UprightFont = *-Roman,
-%  BoldFont = *-Bold,
-%  ItalicFont = *-Italic,
-%  BoldItalicFont= *-BoldItalic,
-%]{Crimson}
-
 %\setmainfont [
 %  Path = ./../fonts/charis-sil/,
 %  Extension = .ttf,
@@ -121,20 +69,6 @@ echo """
   ItalicFont = *-Regular,
   BoldItalicFont= *-ExtraBold,
 ]{Eczar}
-
-%\setmainfont [
-%  Path = ./../fonts/alegreya/,
-%  Extension = .ttf,
-%  UprightFont = *-Regular,
-%  BoldFont = *-Bold,
-%  ItalicFont = *-Italic,
-%  BoldItalicFont= *-BoldItalic,
-%]{Alegreya}
-
-%\setmainfont[
-%  Path = ./../fonts/sorts-mill-goudy/,
-%  Extension = .otf,
-%]{OFLGoudyStM}
 
 \defaultfontfeatures{LetterSpace=100}
 
