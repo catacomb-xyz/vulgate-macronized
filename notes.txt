@@ -6,9 +6,9 @@ Ioseph -> Iōsēph
 Sion -> Siōn
 Israel -> Isrāhēl
 ēsuriit -> ēsurivit
+intelligō -> intellegō
 
-sēmetipse -> sēmet ipse
-TODO: intelligō -> intellegō
+TODO: sēmetipse -> sēmet ipse
 
 Kathisma -> Sēdēs
 Stasis -> Status
