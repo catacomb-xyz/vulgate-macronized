@@ -7,6 +7,9 @@ Sion -> Siōn
 Israel -> Isrāhēl
 ēsuriit -> ēsurivit
 
+sēmetipse -> sēmet ipse
+TODO: intelligō -> intellegō
+
 Kathisma -> Sēdēs
 Stasis -> Status
 
