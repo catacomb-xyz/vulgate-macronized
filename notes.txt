@@ -8,6 +8,7 @@ Sion -> Siōn
 Israel -> Isrāhēl
 ēsuriit -> ēsurivit
 intelligō -> intellegō
+abs -> ā
 
 TODO: sēmetipse -> sēmet ipse
 
