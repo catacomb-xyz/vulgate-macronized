@@ -17,16 +17,39 @@ NUM=$(basename --suffix=".txt" "$FILE")
 echo $TMP_DIR/$NUM
 
 F_TMP="$TMP_DIR"/"$NUM".tmp
-
-# add verse number
-nl -w1 -s'}\hspace{1ex}{\Large ' $FILE > $F_TMP
-# format verse number
-sed -i 's/^/\\filbreak\\noindent\\textsuperscript{ /' $F_TMP
-# end of line
-sed -i 's/$/}\\newline/' $F_TMP
-
 F_EN="$EN_DIR"/"$NUM".txt
 F_EN_TMP="$TMP_DIR"/"$NUM"EN.tmp
+
+# add verse number
+#nl -w1 -s'}\hspace{1ex}{\Large ' $FILE > $F_TMP
+# format verse number
+#sed -i 's/^/\\filbreak\\noindent\\textsuperscript{ /' $F_TMP
+# end of line
+#sed -i 's/$/}\\newline/' $F_TMP
+
+VERSE=1
+fin=$FILE
+while read -r LINE; do
+echo "\\filbreak\\noindent\\textsuperscript{$VERSE}\hspace{1ex}{\Large $LINE}\\newline" >> $F_TMP 
+VERSE=$(expr $VERSE + 1)
+done <$fin
+
+#VERSE=1
+#fin=$FILE
+#while read -r LINE; do
+#VERSEN=$(./number2romanphatom.sh $VERSE)
+#echo $VERSEN
+#echo "\\filbreak\\noindent\\textsuperscript{$VERSEN}{\Large $LINE}\\newline" >> $F_TMP 
+#VERSE=$(expr $VERSE + 1)
+#done <$fin
+
+#exit 1
+
+#fin=$F_EN
+#while read -r LINE; do
+#echo "\\noindent{\\scriptsize $LINE}" >> $F_EN_TMP 
+#NUM=$(expr $NUM + 1)
+#done <$fin
 
 cp $F_EN $F_EN_TMP
 # format english text
@@ -91,13 +114,12 @@ echo """
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyheadoffset[]{-2.0in}
-\fancyfootoffset[]{-2.0in}
+\fancyheadoffset[]{-2in}
+\fancyfootoffset[]{-2in}
 \fancyhead[CE,CO]{\textsl{\rightmark}}
 %\fancyhead[RE]{\textsl{\leftmark}}
 \fancyfoot[C]{\thepage}
-\setlength{\headheight}{15pt}
-\renewcommand{\footrulewidth}{0.4pt}% default is 0pt
+%\renewcommand{\footrulewidth}{0.4pt}% default is 0pt
 
 \hyphenpenalty 10000
 \exhyphenpenalty 10000
