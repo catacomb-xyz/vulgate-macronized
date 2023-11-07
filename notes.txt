@@ -9,8 +9,9 @@ Israel -> Isrāhēl
 ēsuriit -> ēsurivit
 intelligō -> intellegō
 abs -> ā
-
-TODO: sēmetipse -> sēmet ipse
+execrātiō -> exsecrātiō
+execror -> exsecror
+sēmetipse -> sēmet ipse
 
 Kathisma -> Sēdēs
 Stasis -> Status
