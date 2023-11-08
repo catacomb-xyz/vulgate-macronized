@@ -17,4 +17,6 @@ Kathisma -> Sēdēs
 Stasis -> Status
 
 Capitalize: aegyptus, aegypto, etc
-Psalm 115:7 "O Lord"?
+
+Mark ':' check, start at 12
+
