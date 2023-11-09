@@ -18,5 +18,6 @@ Stasis -> Status
 
 Capitalize: aegyptus, aegypto, etc
 
-Mark ':' check, start at 14
+Mark ':' check, start at 15
 Mark Ghost -> Spirit
+shew -> show
