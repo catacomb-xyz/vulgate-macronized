@@ -2,7 +2,6 @@ annuncia -> adnuntia
 Mōȳses -> Mōsēs
 Ierosolymis -> Hierosolymīs
 Ierusalem -> Hierusalem (Psalms)
-Elias -> Hēlīas
 Ioseph -> Iōsēph
 Sion -> Siōn
 Israel -> Isrāhēl
@@ -18,6 +17,5 @@ Stasis -> Status
 
 Capitalize: aegyptus, aegypto, etc
 
-Mark ':' check, start at 15
 Mark Ghost -> Spirit
 shew -> show
