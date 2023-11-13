@@ -18,8 +18,9 @@ do
 
   F_TMP="$TMP_DIR"/"$NUM".tmp
 
-  nl -w1 -s'}\hspace{1ex}{\Large ' $F > $F_TMP
-  sed -i 's/^/\\filbreak\\noindent\\textsuperscript{\\color{red} /' $F_TMP
+  nl -w1 -s'} {\filbreak\Large ' $F > $F_TMP
+  #sed -i 's/^/\\filbreak\\noindent\\textsuperscript{\\color{red} /' $F_TMP
+  sed -i 's/^/\\subsection{/' $F_TMP
   sed -i 's/$/}\\newline/' $F_TMP
 
   F_EN="$EN_DIR"/"$NUM".txt
@@ -70,7 +71,7 @@ echo """
   BoldItalicFont= *-ExtraBold,
 ]{Eczar}
 
-\defaultfontfeatures{LetterSpace=100}
+%\defaultfontfeatures{LetterSpace=100}
 
 \usepackage{indentfirst}
 \usepackage[skip=10pt plus1pt, indent=0pt]{parskip}
@@ -96,6 +97,10 @@ echo """
   {\LARGE\bfseries\centering\color{red}}
   {\thesection}{0em}{• #1 •}[]
 
+\titleformat{\subsection}[runin]
+  {\bfseries\color{red}}
+  {\thesubsection}{0em}{\textsuperscript{#1}}[]
+
 \setcounter{secnumdepth}{0}
 
 \usepackage[
@@ -104,8 +109,8 @@ echo """
   %margin=1in
   right=0.8in,
   left=0.8in,
-  top=1.2in,
-  bottom=1.1in
+  top=1.1in,
+  bottom=1.0in
 ]{geometry}
 
 %\usepackage[
@@ -122,13 +127,17 @@ echo """
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-%\fancyheadoffset[]{-2.0in}
-%\fancyfootoffset[]{-2.0in}
-\fancyhead[CE,CO]{\textsl{\rightmark}}
-%\fancyhead[RE]{\textsl{\leftmark}}
+\fancyhead[CE,CO]{\scriptsize{\rightmark}}
 \fancyfoot[C]{\thepage}
-%\setlength{\headheight}{15pt}
-%\renewcommand{\footrulewidth}{0.4pt}% default is 0pt
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+\renewcommand{\sectionmark}[1]{%
+  \gdef\currsection{#1}%
+}
+\renewcommand{\subsectionmark}[1]{%
+  \markright{\addfontfeature{LetterSpace=5.0}\currsection\ :\ #1}%
+}
 
 \hyphenpenalty 10000
 \exhyphenpenalty 10000
