@@ -107,9 +107,9 @@ echo """
   paperwidth=6.08in,
   paperheight=8.52in,
   %margin=1in
-  right=0.8in,
-  left=0.8in,
-  top=1.1in,
+  right=0.6in,
+  left=0.7in,
+  top=1.0in,
   bottom=1.0in
 ]{geometry}
 
