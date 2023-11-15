@@ -18,7 +18,7 @@ do
 
   F_TMP="$TMP_DIR"/"$NUM".tmp
 
-  nl -w1 -s'} \filbreak{\Large ' $F > $F_TMP
+  nl -w1 -s'} \begin{absolutelynopagebreak}{\Large ' $F > $F_TMP
   #sed -i 's/^/\\filbreak\\noindent\\textsuperscript{\\color{red} /' $F_TMP
   sed -i 's/^/\\subsection{/' $F_TMP
   sed -i 's/$/}\\newline/' $F_TMP
@@ -28,7 +28,7 @@ do
 
   cp $F_EN $F_EN_TMP
   sed -i 's/^/\\noindent\\emph{\\scriptsize  /' $F_EN_TMP
-  sed -i 's/$/}\\\pagebreak[1]/' $F_EN_TMP
+  sed -i 's/$/}\\\end{absolutelynopagebreak}/' $F_EN_TMP
 
   awk '{print; if(getline < "'$F_EN_TMP'") print}' $F_TMP >> $TMP_DIR/$NUM.tex
 done
@@ -44,7 +44,7 @@ for F in $TMP_DIR/*.tex
 do
   NAME=$(basename --suffix=".tex" "$F")
   NUM=$((10#$NAME))
-  STR="\\\section{SECUNDUM MARCUM $NUM}\\n\\\begin{center}\\\includegraphics{separator.png}\\\end{center}"
+  STR="\\\pagebreak[3]\\\section{SECUNDUM MARCUM $NUM}\\n\\\begin{center}\\\includegraphics{separator.png}\\\end{center}"
   sed -i "1s/^/$STR/" $F
   echo "\Needspace{8\baselineskip}" >> $F
 done
@@ -53,23 +53,25 @@ echo """
 \documentclass[10pt,openany]{book}
 
 \usepackage{fontspec}
-%\setmainfont [
-%  Path = ./../fonts/charis-sil/,
-%  Extension = .ttf,
-%  UprightFont = *R,
-%  BoldFont = *B,
-%  ItalicFont = *I,
-%  BoldItalicFont= *BI,
-%]{CharisSIL}
-
 \setmainfont [
-  Path = ./../fonts/eczar/,
-  Extension = .ttf,
-  UprightFont = *-Medium,
+  Path = ./../fonts/junicode2/,
+  Extension = .otf,
+  Numbers={Lining,Proportional},
+  UprightFont = *-Regular,
   BoldFont = *-Bold,
-  ItalicFont = *-Regular,
-  BoldItalicFont= *-ExtraBold,
-]{Eczar}
+  ItalicFont = *-Italic,
+  BoldItalicFont= *-BoldItalic,
+  Numbers = Proportional,
+]{Junicode}
+
+%\setmainfont [
+%  Path = ./../fonts/eczar/,
+%  Extension = .ttf,
+%  UprightFont = *-Medium,
+%  BoldFont = *-Bold,
+%  ItalicFont = *-Regular,
+%  BoldItalicFont= *-ExtraBold,
+%]{Eczar}
 
 %\defaultfontfeatures{LetterSpace=100}
 
@@ -139,8 +141,6 @@ echo """
 \exhyphenpenalty 10000
 
 \begin{document}
-
-\addfontfeature{LetterSpace=1.5}
 
 \maketitle
 
