@@ -18,7 +18,7 @@ do
 
   F_TMP="$TMP_DIR"/"$NUM".tmp
 
-  nl -w1 -s'} {\filbreak\Large ' $F > $F_TMP
+  nl -w1 -s'} \filbreak{\Large ' $F > $F_TMP
   #sed -i 's/^/\\filbreak\\noindent\\textsuperscript{\\color{red} /' $F_TMP
   sed -i 's/^/\\subsection{/' $F_TMP
   sed -i 's/$/}\\newline/' $F_TMP
@@ -28,7 +28,7 @@ do
 
   cp $F_EN $F_EN_TMP
   sed -i 's/^/\\noindent\\emph{\\scriptsize  /' $F_EN_TMP
-  sed -i 's/$/}/' $F_EN_TMP
+  sed -i 's/$/}\\\pagebreak[1]/' $F_EN_TMP
 
   awk '{print; if(getline < "'$F_EN_TMP'") print}' $F_TMP >> $TMP_DIR/$NUM.tex
 done
@@ -44,7 +44,7 @@ for F in $TMP_DIR/*.tex
 do
   NAME=$(basename --suffix=".tex" "$F")
   NUM=$((10#$NAME))
-  STR="\\\section{SECUNDUM MARCUM $NUM}\\n"
+  STR="\\\section{SECUNDUM MARCUM $NUM}\\n\\\begin{center}\\\includegraphics{separator.png}\\\end{center}"
   sed -i "1s/^/$STR/" $F
   echo "\Needspace{8\baselineskip}" >> $F
 done
@@ -95,7 +95,9 @@ echo """
 
 \titleformat{\section}[hang]
   {\LARGE\bfseries\centering\color{red}}
-  {\thesection}{0em}{• #1 •}[]
+  {\thesection}{0em}{#1}[]
+
+\titlespacing{\section}{0pt}{6ex}{0ex}
 
 \titleformat{\subsection}[runin]
   {\bfseries\color{red}}
@@ -107,37 +109,31 @@ echo """
   paperwidth=6.08in,
   paperheight=8.52in,
   %margin=1in
-  right=0.6in,
-  left=0.7in,
+  right=0.8in,
+  left=0.9in,
   top=1.0in,
   bottom=1.0in
 ]{geometry}
 
-%\usepackage[
-%  papersize={8.75in,11.25in},
-%  layout=letterpaper,
-%  layouthoffset=0.125in,
-%  layoutvoffset=0.125in,
-%  right=0.75in,
-%  left=0.75in,
-%  top=1.25in,
-%  bottom=1.25in
-%]{geometry}
-
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[CE,CO]{\scriptsize{\rightmark}}
+
+\renewcommand{\sectionmark}[1]{
+  \markright{\addfontfeature{LetterSpace=10.0} #1}
+}
+
+\fancyhead[CE]{\scriptsize{\rightmark}}
+\fancyhead[CO]{\scriptsize{\rightmark}}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.0pt}
 \renewcommand{\footrulewidth}{0.0pt}
 
-\renewcommand{\sectionmark}[1]{%
-  \gdef\currsection{#1}%
-}
-\renewcommand{\subsectionmark}[1]{%
-  \markright{\addfontfeature{LetterSpace=5.0}\currsection\ :\ #1}%
-}
+\newenvironment{absolutelynopagebreak}
+  {\par\nobreak\vfil\penalty0\vfilneg
+   \vtop\bgroup}
+  {\par\xdef\tpd{\the\prevdepth}\egroup
+   \prevdepth=\tpd}
 
 \hyphenpenalty 10000
 \exhyphenpenalty 10000
