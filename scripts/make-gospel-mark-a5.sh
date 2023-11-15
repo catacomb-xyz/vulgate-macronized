@@ -120,7 +120,7 @@ echo """
 \fancyhf{}
 
 \renewcommand{\sectionmark}[1]{
-  \markright{\addfontfeature{LetterSpace=10.0} #1}
+  \markboth{\addfontfeature{LetterSpace=10.0} #1}{\addfontfeature{LetterSpace=10.0} #1}
 }
 
 \fancyhead[CE]{\scriptsize{\rightmark}}
