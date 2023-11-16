@@ -86,10 +86,10 @@ echo """
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
-\title{\huge\bfseries\color{red} ĒVANGELIUM}
-\author{\bfseries\color{red} SECUNDUM MARCUM}
-\date{\scriptsize \today} % Sets date for date compiled
-\titlepic{\includegraphics[scale=0.25]{red-cross.png}}
+%\title{\huge\bfseries\color{red} ĒVANGELIUM}
+%\author{\bfseries\color{red} SECUNDUM MARCUM}
+%\date{\scriptsize \today}
+%\titlepic{\includegraphics[scale=0.25]{red-cross.png}}
 
 %\titleformat{\chapter}
 %  {\LARGE\bfseries\centering\color{red}}
@@ -141,9 +141,24 @@ echo """
 \hyphenpenalty 10000
 \exhyphenpenalty 10000
 
-\begin{document}
+\usepackage{setspace}
 
-\maketitle
+\begin{document}
+\thispagestyle{empty} 
+\begin{center}
+\topskip0pt
+\vspace*{\fill}
+{\huge\bfseries\color{red} ĒVANGELIUM}
+
+\vspace{3mm}
+
+{\large\bfseries\color{red} SECUNDUM MARCUM}
+
+\vspace{5mm}
+
+{\huge\color{red} ✠}
+\vspace*{\fill}
+\end{center}
 
 \newpage
 \clearpage
@@ -156,7 +171,7 @@ echo """
 
 \begin{center}
 \vfill
-\includegraphics[scale=0.25]{red-cross.png}
+{\huge\color{red} ✠}
 \vfill
 \end{center}
 
