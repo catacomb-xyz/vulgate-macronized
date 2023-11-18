@@ -80,29 +80,31 @@ echo """
 
 \usepackage[explicit]{titlesec}
 \usepackage{titlepic}
-\usepackage{color}
 \usepackage{needspace}
+
+\usepackage{xcolor}
+\definecolor{deepred}{HTML}{E60000}
 
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 
-%\title{\huge\bfseries\color{red} ĒVANGELIUM}
-%\author{\bfseries\color{red} SECUNDUM MARCUM}
+%\title{\huge\bfseries\color{deepred} ĒVANGELIUM}
+%\author{\bfseries\color{deepred} SECUNDUM MARCUM}
 %\date{\scriptsize \today}
 %\titlepic{\includegraphics[scale=0.25]{red-cross.png}}
 
 %\titleformat{\chapter}
-%  {\LARGE\bfseries\centering\color{red}}
+%  {\LARGE\bfseries\centering\color{deepred}}
 %  {\thechapter}{1em}{}
 
 \titleformat{\section}[hang]
-  {\LARGE\bfseries\centering\color{red}}
+  {\LARGE\bfseries\centering\color{deepred}}
   {\thesection}{0em}{#1}[]
 
 \titlespacing{\section}{0pt}{6ex}{0ex}
 
 \titleformat{\subsection}[runin]
-  {\bfseries\color{red}}
+  {\bfseries\color{deepred}}
   {\thesubsection}{0em}{\textsuperscript{#1}}[]
 
 \setcounter{secnumdepth}{0}
@@ -150,13 +152,13 @@ echo """
 \begin{center}
 \topskip0pt
 \vspace*{\fill}
-{\huge\bfseries\color{red} ĒVANGELIUM}
+{\huge\bfseries\color{deepred} ĒVANGELIUM}
 \vspace{2ex}
 
-{\large\bfseries\color{red} SECUNDUM MARCUM}
+{\large\bfseries\color{deepred} SECUNDUM MARCUM}
 \vspace{8ex}
 
-{\huge\color{red} ✠}
+{\huge\color{deepred} ✠}
 \vspace*{\fill}
 \end{center}
 \newpage
@@ -198,7 +200,7 @@ For further information, comments, questions, or corrections, please visit \text
 \topskip0pt
 \vspace*{\fill}
 
-\noindent{\large\bfseries\color{red} Ōrātiō ad Sānctum Spīritum}\vspace{-3ex}
+\noindent{\large\bfseries\color{deepred} Ōrātiō ad Sānctum Spīritum}\vspace{-3ex}
 
 \noindent\rule{3in}{0.1pt}
 
@@ -255,7 +257,7 @@ echo """
 
 \begin{center}
 \vfill
-{\huge\color{red} ✠}
+{\huge\color{deepred} ✠}
 \vfill
 \end{center}
 
