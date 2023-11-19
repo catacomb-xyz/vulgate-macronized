@@ -113,8 +113,8 @@ echo """
   paperwidth=6.08in,
   paperheight=8.52in,
   %margin=1in
-  right=0.8in,
-  left=0.9in,
+  right=0.75in,
+  left=0.75in,
   top=1.0in,
   bottom=1.0in
 ]{geometry}
@@ -202,7 +202,7 @@ For further information, comments, questions, or corrections, please visit \text
 
 \noindent{\large\bfseries\color{deepred} Ōrātiō ad Sānctum Spīritum}\vspace{-3ex}
 
-\noindent\rule{3in}{0.1pt}
+\noindent\rule{3in}{0.15pt}
 
 \noindent{Venī, Sānctē Spīritus, replē tuōrum corda fidēlium,}\vspace{-2ex}
 
