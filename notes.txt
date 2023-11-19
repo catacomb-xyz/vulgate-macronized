@@ -19,3 +19,12 @@ Capitalize: aegyptus, aegypto, etc
 
 Mark Ghost -> Spirit
 shew -> show
+
+
+Case Singular
+Nominative Mōsēs
+Genitive Mōsis
+Dative Mōsī
+Accusative Mōsem
+Ablative Mōse
+Vocative Mōsēs
