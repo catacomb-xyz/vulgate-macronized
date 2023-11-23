@@ -75,15 +75,16 @@ echo """
 \documentclass[10pt,openany]{book}
 
 \usepackage{fontspec}
-
 \setmainfont [
-  Path = ./../fonts/eczar/,
-  Extension = .ttf,
-  UprightFont = *-Medium,
+  Path = ./../fonts/junicode2/,
+  Extension = .otf,
+  Numbers={Lining,Proportional},
+  UprightFont = *-Regular,
   BoldFont = *-Bold,
-  ItalicFont = *-Regular,
-  BoldItalicFont= *-ExtraBold,
-]{Eczar}
+  ItalicFont = *-Italic,
+  BoldItalicFont= *-BoldItalic,
+  Numbers = Proportional,
+]{Junicode}
 
 \usepackage{indentfirst}
 \usepackage[skip=10pt plus1pt, indent=0pt]{parskip}

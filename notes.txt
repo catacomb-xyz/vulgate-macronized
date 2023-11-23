@@ -11,6 +11,8 @@ abs -> ā
 execrātiō -> exsecrātiō
 execror -> exsecror
 sēmetipse -> sēmet ipse
+Ephrem -> Efraim
+Ephrata -> Efrata
 
 Kathisma -> Sēdēs
 Stasis -> Status
